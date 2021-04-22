@@ -17,15 +17,16 @@
     <section class="slider"
     @mouseenter="stopLoop"
     @mouseout="startLoop"
+
+    @keyup.left="prevPhoto"
+    @keyup.right="nextPhoto"
+    tabindex="0"
+    ref="slider"
     >
         <div class="prev" @click="prevPhoto">
             <i class="fas fa-arrow-left"></i>
         </div>
-        <div class="images"
-        @keyup.left="prevPhoto"
-        @keyup.right="nextPhoto"
-        tabindex="0"
-        ref="slider">
+        <div class="images">
             <img :src="photos[indexPhotos]" alt="">
         </div>
         <div class="next" @click="nextPhoto">
