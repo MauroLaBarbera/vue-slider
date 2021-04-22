@@ -21,7 +21,11 @@
         <div class="prev" @click="prevPhoto">
             <i class="fas fa-arrow-left"></i>
         </div>
-        <div class="images">
+        <div class="images"
+        @keyup.left="prevPhoto"
+        @keyup.right="nextPhoto"
+        tabindex="0"
+        ref="slider">
             <img :src="photos[indexPhotos]" alt="">
         </div>
         <div class="next" @click="nextPhoto">

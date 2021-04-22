@@ -49,11 +49,11 @@
 }
 
 .prev {
-    left: 20%;
+    left: 250px;
 }
 
 .next {
-    right: 20%;
+    right: 250px;
 }
 
 .dot-nav {

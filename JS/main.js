@@ -14,7 +14,7 @@ const app = new Vue ({
         indexPhotos: 0,
         intervalID: 0,
     },
-    created() {
+    mounted() {
         this.startLoop();
     },
 
@@ -42,9 +42,14 @@ const app = new Vue ({
             this.intervalID = setInterval(() => {
                 this.nextPhoto();
             }, 3000);
+            //TOGLIE IL FOCUS
+            this.$refs.slider.blur();
         },
         stopLoop() {
             clearInterval(this.intervalID);
+
+            //METTERE FOCUS AD UIN ELEMENTO
+            this.$refs.slider.focus();
         }
     }
 });
