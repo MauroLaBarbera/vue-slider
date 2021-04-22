@@ -14,7 +14,10 @@
 <body>
     
 <div id="app">
-    <section class="slider">
+    <section class="slider"
+    @mouseenter="stopLoop"
+    @mouseout="startLoop"
+    >
         <div class="prev" @click="prevPhoto">
             <i class="fas fa-arrow-left"></i>
         </div>
@@ -24,6 +27,8 @@
         <div class="next" @click="nextPhoto">
             <i class="fas fa-arrow-right"></i>
         </div>
+
+        <!-- SETPHOTO CON CLICK PALLINI -->
         <div class="dot-nav">
             <i v-for="(photo, index) in photos"
             class="fas fa-circle"
